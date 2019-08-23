@@ -1,0 +1,51 @@
+HTML Accessibility = 접근성
+
+
+<img alt="">
+    유용한 정보, 기능 수행, 가독성 향상.
+    경우마다 다르지만, 대부분의 장식용 이미지는 빈 alt 텍스트(alt=””)로 남겨두어야 한다.
+
+    <img src="/img/albert.jpg" alt=오른쪽을 보고있는 붉은털 원숭이의 옆모습을 근접촬영. 배경은 흐릿하고, 흑백사진이다." />
+    <button><img src="/img/log-in-button.png" width="91" height="43" alt="Log in" /></button>
+    <img src="/img/decorative.png" width="64" height="24" alt="" />
+
+    주위의 컨텐츠에 이미지에 대한 설명이 이미 묘사되어 있을때 빈 alt 텍스트를 이용.
+    큰 이미지의 한 부분인 경우 다른 부분의 이미지가 모든 이미지에 대한 적절한 alt 텍스트를 이미 포함하고 있는 경우.
+    감춰지는 이미지일때. width와 height는 ‘0’으로 설정되어져야 한다.
+
+
+Clear Language
+    Instead of writing 5–7, write 5 to 7.
+    Expand abbreviations — instead of writing Jan, write January.
+    Expand acronyms, at least once or twice. Instead of writing HTML in the first instance, write Hypertext Markup Language.
+    Avoid slang words
+    Keep sentences as short as possible.
+
+
+Declare the Language
+    Declaring a language is important for screen readers and search engines, and is declared with the lang attribute. Use the following to show a web page in English
+    <html lang="en">
+
+
+Write Good Links
+    Bad Links
+        Click here
+        Read more..
+        Buy tickets to Mars here
+
+    Good Links
+        Find out more about the HTML language
+        Read more about how to eat healthy
+        Buy tickets to Mars here
+
+
+Link Titles
+    <a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Visit our HTML Tutorial</a>
+
+
+If you need a button, use the <button> element
+    use the <button> element and not a <div>
+    Buttons have many benefits/crucial features, for example
+        Focusable
+        Clickable (with mouse and keys)
+        Screen readers identify them as buttons
