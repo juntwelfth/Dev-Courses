@@ -1,0 +1,7 @@
+HTML	https://opentutorials.org/course/3084	Basic
+	https://opentutorials.org/course/2039	Beginning
+	https://opentutorials.org/course/1058	HTML Dictionary
+
+	https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5/	Basic (Eng)
+
+CSS
