@@ -1,0 +1,26 @@
+floats
+    이미지를 어떻게 띄워서 텍스트와 함께 배치할 것인가
+
+    :inherit            상속
+    :left
+    :right
+    :none
+
+left와 right를 사용하면 display는 무시됨 (none제외)
+
+사용법
+.content > img{float: left}
+
+.float-container {
+    width: 320px;
+    border: 2px solid blue;
+}
+.float-container img {
+    float: left;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid purple;
+}
+
+
+요즘에는 레이아웃용으로 많이 사용되기도 함

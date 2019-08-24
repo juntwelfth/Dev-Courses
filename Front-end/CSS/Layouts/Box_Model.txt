@@ -1,0 +1,28 @@
+border
+    -left
+    -top
+    -bottom
+    -right
+    -width                  주로 px단위 사용
+    -style                  solid, dotted...
+    -color
+
+    border:5px solid red    처럼 한줄로 쓸 수 있고, 순서는 중요하지 않음
+
+    h1과 같은 요소에 쓰이면 block level element
+    a와 같은 요소에 쓰이면 inline element
+
+    하지만 이 둘도 기본으로 설정되어있을 뿐 css속성으로 얼마든지 바꿀 수 있다
+
+    display
+        :none
+        :block
+        :inline
+        :inline-block
+
+
+margin, padding                 margin - 바깥쪽 여백 padding - 안쪽 여백
+        -left
+        -top
+        -bottom
+        -right

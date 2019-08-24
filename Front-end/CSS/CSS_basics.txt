@@ -1,0 +1,44 @@
+<style>
+    tag  
+        a {                         a = selector
+            color:red;              color:red = declaration
+        }                           color = property, red = value
+
+    class                           class > a
+        .classname {                class="classname"
+            color:red;              classname에 해당되는 모든 클래스 설정
+        }
+
+    id                              id > class > a
+        #idname {                   id는 단 한번만 등장해야함
+            color:red;
+        }
+
+    
+        * {                         전역설정
+            color:red;
+        }
+
+        a:link {color:red;}         
+        a:visited {color:red;}      방문했던 링크 색
+</style>
+
+    <a href="safsf" style="">     
+        color                       색 설정
+        text-decoration             텍스트 설정
+            :none                   밑줄 없애기
+            :underline              밑줄 만들기
+
+
+
+properties
+
+    font
+        -size
+        -family                     글꼴
+        -weight                     굵기
+    line-height                     줄 높이
+    text-align                      정렬
+    width
+    height
+    background-color

@@ -1,0 +1,31 @@
+display
+    어떻게 표시할지
+
+    :inline             기본값, 앞뒤로 줄바꿈 되지 않음
+    :block              요소 앞 뒤로 줄바꿈이 됨
+    :none               공간을 차지하지 않음
+    :inline-block       박스 모양이 inline처럼 옆으로 늘어섬
+
+display: inline
+가로로 쭉 나열되는 박스형식
+
+display: none
+아무것도 없음
+
+display: block
+세로로 줄바꿈이 됨
+
+display: inline-block
+옆으로 나열되지만 뭔가 따로따로 떨어져있음
+
+
+visibility 
+    표시할지 안할지
+
+    :visible
+    :hidden             숨기지만 자신의 영역은 계속 차지
+    :collapse           겹치기 (테이블의 행과 열 요소만 지정 가능)
+    :inherit
+    
+visibility: hidden
+공간은 차지하지만 아무것도 안보임

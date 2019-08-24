@@ -1,0 +1,42 @@
+@media
+    어떤 조건을 이루었을 때 표시하는 화면을 다르게 하는것
+
+@media(max-width: 500px){       최대 500px = 500px 이하일 때
+    #grid {                     grid라는 id를 가진 요소들을 수정
+    display: block;
+    }
+    ol {                        ol 요소를 수정
+    border-right: none;
+    }
+    h1 {                        h1 요소를 수정
+    border-bottom: none;
+    }
+}
+
+
+미디어 유형
+    all             모든 장치에 적합
+    print           인쇄 결과물 및 출력 미리보기 화면에 표시중인 문서
+    screen          주로 화면 대상
+    speech          음성 합성장치 대상
+
+미디어 특성
+    width
+    height
+    aspect-ratio
+    orientation
+    resolution
+    scan
+    grid
+    update
+    overflow-block
+    overflow-inline
+    color
+    color-gamut
+    color-index
+    display-mode
+    ....
+
+(min-width: 768px)      작은 기기 (타블렛)
+(min-width: 992px)      중간 기기 (데스크탑)
+(min-width: 1200px)     대형 기기 (라지 데스크탑)

@@ -1,0 +1,80 @@
+grid
+    <div>...</div>          
+        <div id="idid">
+
+    padding                 패딩값으로 화면 구성하기
+
+    display: grid;          그리드 형태로 만들기
+                            그리드로 만들면 알아서 늘어나고 줄어들고 함
+
+    grid-template-columns
+        :1fr                화면을 비율로 나누기
+
+grid properties
+    display
+
+    grid
+        -template           반복되는 패턴은 repeat(num, 1fr)
+            -columns        행
+            -rows           열
+            -areas
+        -auto               그리드 셀의 너비와 높이를 잡는데 유익
+            -columns
+            -rows
+            -flow
+
+
+부모 컨테이너로 div를 이용해 제어하려는 요소들을 감싸기
+
+<div class="wrapper">
+    <div class="div1">1</div>
+    <div class="div1">2</div>
+    <div class="div1">3</div>
+    <div class="div1">4</div>
+</div>
+
+div들에 스타일을 추가해서 쉽게 구분할 수 있게 하기
+또한 그리드 레이아웃이 적용되도록 wrapper가 있는 div에 display: grid를 적용하기
+
+.wrapper > div {
+    background-color: orange;
+    border: 1px black solid;
+}
+
+.wrapper > div:nth-child(odd) {
+    background-color: indianred;
+}
+
+.wrapper {
+    display: grid;
+}
+
+
+픽셀값으로 값을 지정하기
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 100px 100px 100px
+}
+
+auto 값으로 지정하기    -   알아서 크기를 지정해줌
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 100px auto 100px
+}
+
+fr 값으로 지정하기    -    각자 비율에 맞게 크기를 지정해줌
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+columns, rows로 값을 지정하기
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 50px;
+}

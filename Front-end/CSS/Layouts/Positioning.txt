@@ -1,0 +1,11 @@
+Positioning
+    relative positioning    자신의 위치를 기준으로 한 상대위치 값을 정한다
+                            자식 엘리먼트의 크기에 따라서 부모 엘리먼트의 크기가 자동으로 변경되지만, 엘리먼트의 위치에 따라서는 변경되지 않는다.
+
+    absolute positioning    문서를 기준으로 위치가 정해지기 때문에 부모                           엘리먼트의 위치와는 무관함
+                            엘리먼트의 크기가 부모 엘리먼트의 크기에 반영되지 않음
+
+    fixed positioning       스크롤의 영향을 받지 않음
+
+    static positioning      left, top, right, bottom 무시
+
