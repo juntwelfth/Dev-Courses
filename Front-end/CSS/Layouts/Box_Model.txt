@@ -6,6 +6,7 @@ border
     -width                  주로 px단위 사용
     -style                  solid, dotted...
     -color
+    -radius                 뭔가 둥글게 만들어주는거같음
 
     border:5px solid red    처럼 한줄로 쓸 수 있고, 순서는 중요하지 않음
 
@@ -26,3 +27,5 @@ margin, padding                 margin - 바깥쪽 여백 padding - 안쪽 여�
         -top
         -bottom
         -right
+
+box-sizing:border-box           크기 동일화

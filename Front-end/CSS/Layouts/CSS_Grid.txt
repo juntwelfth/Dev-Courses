@@ -22,6 +22,7 @@ grid properties
             -columns
             -rows
             -flow
+        -gap                row, column 순
 
 
 부모 컨테이너로 div를 이용해 제어하려는 요소들을 감싸기

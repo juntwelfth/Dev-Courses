@@ -1,0 +1,50 @@
+https://caniuse.com/
+    브라우저가 지원하는지
+
+https://css-tricks.com/
+    css에 관해..
+
+https://bennettfeely.com/image-effects/
+    css 필터 리스트
+
+https://www.w3schools.com/cssref/css3_pr_mediaquery.asp/
+    css 미디어쿼리
+
+https://userstyles.org/
+    커스텀 웹 테마들
+
+https://fonts.google.com/?authuser=1/
+    구글웹폰트
+
+www.fontreach.com/#top
+    폰트 순위
+
+https://www.w3schools.com/css/css_font.asp/
+    css 폰트 설명
+
+https://www.w3schools.com/css/css_colors.asp/
+    css color 설명
+
+https://developer.microsoft.com/en-us-microsoft-edge/platform/usage/
+    css 속성 많이 쓰이는 순위
+
+https://www.advancedwebranking.com/html/
+    html 태그 많이 쓰이는 순위
+
+flukeout.github.io/
+    게임으로 배우는 css 선택자
+
+codepen.io
+    css 정보들..
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/transform/
+    트랜스폼 예제들
+
+ianlunn.github.io/Hover/
+    마우스 올렸을때 효과 예제
+
+https://www.minimamente.com/project/magic//
+    css 이펙트
+
+https://matthewlein.com/tools/ceaser
+    트랜지션 효과
