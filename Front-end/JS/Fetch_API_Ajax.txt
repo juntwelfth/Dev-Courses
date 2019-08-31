@@ -1,0 +1,96 @@
+Fetch
+    fetch('css').then(function(response){ 
+        response.text().then(function(text){  
+            alert(text);                         
+        })                                                  
+    })
+
+    fetch('css')
+        서버에 css라는 파일을 요청하는 과정
+
+    function callback(){
+        console.log('response end')
+    }
+    
+    fetch('css').then(callback)
+
+
+Ajax
+    자바스크립트를 이용해서 웹브라우저와 서버의 통신 사이에 효율을 위해 single page 웹을 전송하는것
+
+
+XHR
+    GET
+        const xhr = new XMLHttpRequest()                XMLHttpRequest 객체 생성
+        const url = 'http://www.google.com'             url 지정
+
+        xhr.responseType = 'json'                       xhr의 응답형식을 json으로 지정
+        xhr.onreadystatechange = () => {        
+            if(xhr.readyState === XMLHttpRequest.DONE){ xhr의 state가 DONE(4)일 때
+                return xhr.response                     xhr.response 리턴
+            }
+        }
+
+        xhr.open('GET', url)                            xhr GET방식으로 url을 오픈하기
+        xhr.send()                                      xhr 보내기
+
+    POST
+        const data = JSON.stringify({id: '200'})
+        xhr.open('POST', url)
+        xhr.send(data)
+
+
+Fetch
+    GET
+        fetch('url').then(response => {                 send Request
+            if(response.ok){                            converts response object to JSON
+                return response.json()
+            }
+            throw new Error('Request failed!')          handle errors
+        }, networkError => console.log(networkError.message))
+        .then(jsonResponse => jsonResponse)             handle success
+
+    POST
+        fetch('url', {                                  send Request
+            method: 'POST', 
+            body: JSON.stringify({id: '200'})
+        }).then(response => {
+            if(response.ok){                            converts response object to JSON
+                return response.json()
+            }
+            throw new Error('Request failed!')          handle errors
+        }, networkError => console.log(networkError.message))
+        .then(jsonResponse => {                         handle success
+            // Code to execute with jsonResponse
+        })
+
+    async get
+        async fuction getData(){
+            try{
+                const response = await fetch('url')     sends request
+                if(response.ok){                        handles response if successful
+                    const jsonResponse = await response.json()
+                    // Code to execute with jsonResponse
+                }
+                throw new Error('Request failed')       handles response if unsuccessful
+            } catch(error){
+                console.log(error)
+            }
+        }
+
+    async post
+        async function getData(){
+            try{
+                const response = await fetch('url, {    sends request
+                    method: 'POST',
+                    body: JSON.stringify({id: '200'})
+                })
+                if(response.ok){                        handles response if successful
+                    const jsonResponse = await response.json()
+                    // Code to execute with jsonResponse
+                }
+                throw new Error('Request Failed!)       handles response if unsuccessful
+            } catch(error){
+                console.log(error)
+            }
+        }

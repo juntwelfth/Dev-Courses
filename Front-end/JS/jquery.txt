@@ -1,0 +1,9 @@
+Jquery 소스파일
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+$()
+    $("#list li").text("coding every body")
+    list라는 ID값을 가진 부모를 둔 하위 li 요소들의 text를
+    coding every body로 바꾸기
+

@@ -1,0 +1,471 @@
+변수 선언
+    i = 10                          지역변수                
+    var i = 10                      전역변수
+
+    var i = 5                       전역변수 설정
+    function a(){
+        var i = 10;                 전역변수 설정
+        b();                        함수 b 호출
+    }
+    function b(){
+        document.write(i);          만들어진 시점에 i는 5
+    }
+    a();                            5
+
+
+함수정의
+    function 함수명(인자){
+        return 인자;
+    }
+
+    var add = function(x, y){
+        return x + y;
+    }
+
+
+객체
+    var object = {abc : 5, def : 10, ghi : 15};
+
+    var object = (new Object){};
+    object[abc] = 5;
+    object[def] = 10;
+    object[ghi] = 15;
+
+    for(key in object){
+        document.write("key : " +key +" value : " +object[key] +"<br />");
+    }
+
+    var arr = {      // 객체 생성
+        list: { abc: 6, def: 10, ghi: 15 },
+        print: function() {
+          for (key in this.list) {
+            document.write(key, this.list[key]);
+          }
+        }
+      };
+
+
+정규표현식
+    var pattern = /a/           a
+    var pattern = /a./          a와 그 다음 문자
+
+    pattern.exec('asdf')        실행
+    pattern.test('asdf')        테스트 (true, false)
+
+    String.match(pattern)       일치하는 문자
+    String.replace(pattern, 'A')일치하는 문자를 'A'로 바꾼다
+
+    i                           대소문자 구분 X
+        var xi = /a/
+        "Abcde".match(xi)       null
+
+        var oi = /a/i
+        "Abcde".match(oi)       ["A"]
+
+    g                           모든 결과 리턴
+        var xg = /a/
+        "abcdea".match(xg)      ["a"]
+
+        var og = /a/g
+        "abcdea".match(og)      ["a", "a"]
+
+    (\w+)\s(\w+)                공백이 가운데에 있는 문자열 (a b)
+        \w      A~Z, a~z, 0~9
+        \w+     한 개 이상의 문자
+        \s      공백
+
+        var pattern = /(\w+)\s(\w+)/
+        var str = "coding everybody"
+        var result = str.replace(pattern, "$2, $1")
+
+        coding : $1     everybody : $2
+
+        result = everybody, coding
+
+
+기본
+    console.log()               프린트
+    // or /* */                 주석
+
+    데이터타입
+        strings                 'string' 혹은 "string" 처럼 감싸줘야함
+        numbers                 그냥 숫자만 쓰면된다. 23.8879 처럼
+        booleans
+        nullundefined
+        symbol
+        object
+
+    operator (연산자)
+        +
+        -
+        *
+        /
+        %
+
+    object (객체)
+        속성을 가질 수 있음         속성을 사용할 땐 'Hello'.length 이런식으로
+                               'Hello'.toUpperCase()
+        . 을 이용해서 접근
+
+    variable (변수)
+        var                     fuction 단위의 scope {} 단위가 아님 / 비권장
+        let                     값을 어디서든 변경가능 / 변할 수 있는 값을 지정할 때 권장
+        const                   상수 / 권장
+
+    string
+        temlate literal         console.log(`이렇게 시작해서 변수를 넣을 땐 ${변수이름} 이런식으로 가능)
+        charAt(n)               string은 string[n]으로 index를 찾을 수 있지만 chatAt(n)도 가능
+
+    falsy values
+        string                  '', "", null, undefined, NaN
+        numbers                 0
+
+    falsy assignment            name = abc || "def"     <-      true일 시 abc, false일 시 "def"
+
+    ternary expression          abc ? aaa : bbb
+
+
+Math
+    .random()                   0 ~ 1 사이의 난수 (실수)
+        * (max - min) + min     min (포함) ~ max (불포함) 사이의 난수
+        * (max - min + 1) + min min (포함) ~ max (포함) 사이의 난수
+
+    .floor()                    소수점 이하 버림
+
+Math.floor(Math.random() * 100 + 1)     1부터 100 사이의 난수
+
+
+function
+    function greetWorld(){                  function : Function Keyword     greetWorld : Identifier
+        console.log('Hello, World!');       <- Function body
+    }
+
+    function calculateArea(width, height){  width, height : Parameters
+    console.log(width * height);            <- width, height : parameters(매개변수)는 변수처럼 쓰인다
+    }
+    default parameter           function functionName(parameter = 'Default Value', parameter2 = 5){
+                                } 이런 식으로 parameter(매개변수)의 default 값을 정할 수 있음
+
+    arrow functions
+        0 parameters            const functionName = () => {};
+        1 parameters            const functionName = paramOne => {};
+        2 parameters            const functionName = (paramOne, paramTwo) => {};
+
+        {}                      한줄짜리 함수의 경우 생략가능
+        return                  생략가능
+
+    parameter로 'string'이 올 순 없다. (argument로 'string'은 올 수 있음)
+
+
+scope
+    함수 안에 있는 const는 block scope (지역 변수)
+
+
+arrays
+    arr[1]                      [1] 을 Brackets라고 함
+    
+    arr = ['aaa', 'bbb', 'ccc']
+    arr[1] = 'ddd'              ['ddd', 'bbb', 'ccc']
+    arr = ['ddd']               ['ddd']
+
+    arr.push()                  배열에 추가
+    arr.concat([x, y])          nested arrays 추가할 때
+    arr.unshift()               배열의 시작점에 추가
+ 
+    arr.splice(2, 0, B)         2번째 인덱스부터 시작해서 0만큼의 값을 제거한 후 B를 추가   
+    arr.slice(2, 4)             begin(포함) ~ end(미포함) 까지 잘라서 새로운 복사본 생성
+ 
+    arr.shift()                 배열의 첫번째 원소 제거
+    arr.pop()                   배열의 마지막 원소 제거
+ 
+    arr.join()                  모든 요소를 연결해 하나의 문자열로 만들기
+        join('-')               요소 사이에 구분자 만들기   default 구분자 : ','
+    arr.split()                 배열 요소 나누기
+        split('')               글자별로 나누기
+        split(' ')              단어별로 나누기
+    arr.sort()                  정렬
+    arr.reverse()               역정렬
+
+    Nested Arrays (이차원배열)     arr = [[1, 2], [3, 4], [5, 6]]
+
+
+iterator (callback)
+    .forEach()
+        배열 각각의 요소를 하나하나 대입시키는 방식
+
+        groceries = ['brown sugar', 'salt', 'walnuts'];
+        
+        groceries.forEach(function(callback){
+            console.log(' = ' + callback);
+        });
+
+        groceries.forEach(callback => console.log(callback));
+
+    .map()  
+        .forEach()와 비슷하지만 .map()은 새로운 배열을 생성한다.
+
+        groceries = ['brown sugar', 'salt', 'walnuts'];
+        
+        newarr = groceries.map(function(callback){
+            return callback[0];                              <- newarr = ['bsw']
+        });
+
+        newarr = groceries.forEach(callback => callback[0]);
+
+    .filter()
+        .map()과 비슷하지만 필터를 사용한다. (조건)
+
+        arr = ['1', '22', '333', '4444', '55555']
+
+        shortarr = arr.filter(callback => callback.length < 4)    길이가 4보다 작은 요소만 필터
+
+        shortarr = ['1', '22', '333']
+
+    .findIndex()
+        filter와 비슷하고, index를 찾아준다. 못찾으면 -1을 반납한다.
+
+        arr = ['10', '20', '30', '40', '50']
+
+        greaterthan30 = arr.findIndex(callback => callback > 30)
+
+        greaterthan30 = 3
+
+    .find()
+        findIndex()와 동일하지만 찾은 값을 리턴한다.
+        
+    .reduce()
+        결과적으로는 배열 요소 전체 합을 반납한다.
+
+        numbers = [1, 2, 4, 10]
+
+        sumnumbers = numbers.reduce((accumulator, currentValue) => accumulator + currentValue)
+
+        과정
+순차     accumulator    currentValue    return value
+ 1      1              2               3
+ 2      3              4               7
+ 3      7              10              17
+
+        첫번째 인자는 callback이고 두번째 인자로 initial value를 정해줄 수 있다
+
+        sumnumbers = numbers.reduce((accumulator, currentValue) => {
+            return accumulator + currentValue
+        }, 100)
+
+        과정
+순차     accumulator    currentValue    return value
+ 1      100            1               101
+ 2      101            2               103
+ 3      103            4               107
+ 4      107            10              117
+
+    .some()
+        배열 안의 어떤 요소라도 주어진 판별 함수를 통과하는지 테스트, 통과하면 true. 빈 배열은 무조건 false 리턴
+
+        arr = ['1', '22', '333', '4444']
+
+        console.log(arr.some(callback => callback.length > 3))      true
+
+    .every()
+        some()이랑 똑같은 메커니즘 but 모든 요소 검사, 빈 배열은 무조건 true 리턴
+
+
+Object
+    let spaceship = {                   let spaceship : Object
+        'Fuel Type': 'diesel',          Properties
+        color: 'silver'                 'Fuel Type', color : Key    'diesel', 'silver' : Value
+    }
+
+    Accessing Properties
+        object.property
+
+    Bracket Notation                    숫자, 공백, 특수문자를 가진 key를 불러올 때
+        object[property]                무조건 이 방법을 써야함
+
+    Property Assignment
+        spaceship['Fuel Type'] = 'vegetable oil';
+        spaceship.color = 'gold';
+
+    Pass by Reference
+        const spaceship = {
+            'Fuel Type': 'Turbo Fuel',
+            homePlanet: 'Earth'
+        }
+
+        이렇게 해야 바뀜 (object가 const라고 할 지라도..)
+        let functionName = object => {
+            object['Fuel Type'] = 'avocado oil';
+        }
+
+        이렇게 하면 안됨
+        let functionName = object => {
+            object = {
+                'Fuel Type': 'avocado oil'
+            }
+        }
+
+    Looping Through Objects
+        for ... in                      object에 있는 항목들을 반복적으로 반환하여 '무언가'를 할 수 있게 해줌
+
+        var object = {a:1, b:2, c:3}
+        
+        for(var prop in object){
+            console.log(object[prop]);  1, 2, 3
+        }
+
+    Getters, Setters
+        const person = {
+            _firstname: 'John',
+            _lastName: 'Doe',
+            age: 0,
+            set setAge(num){
+                if(typeof num === 'number'){
+                    this.age = num;
+                }
+            },
+            get fullName() {
+                if(this._firstName && this._lastName){
+                    return `${this._firstName} ${this._lastName}`;
+                } else {
+                    return 'Missing a first name or a last name.';
+                }
+            }
+        }
+
+        person.age = 23
+        person.fullName    // 'John Doe'
+
+
+Class
+    Constructor
+        자바의 생성자와 같은 역할을 함.
+
+        class Dog {                         클래스 생성
+            constructor(name){              생성자
+                this.name = name;           인스턴스        this는 필수
+                this.behavior = 0;          인스턴스        this는 필수
+            }
+        }
+
+    Methods
+        앞에 let, var, const를 붙이지 않는다
+
+
+Module
+    export
+        module.exports = {
+            asdfasdfsadfasf
+        }
+
+        default functionName
+        functionName from './jsfile'
+
+        export {function1, function2}
+        import {function1, function2} from './jsfile'
+
+        각 변수, 함수 앞에 export를 붙여줄수도 있음
+
+        export {functionLongName1 as long1, functionLongName2 as long2}
+        import {long1, long2} from './jsfile'
+
+
+Promise             비동기 작업들을 순차적으로 진행하거나 병렬로 진행하는 등 컨트롤이 수월해지고 가독성이 좋아진다
+    pending         아직 약속을 수행 중인 상태
+    fulfilled       약속이 지켜진 상태
+    rejected        약속이 못 지켜진 상태
+
+    Constructing
+        const executorFunction = (resolve, reject) => {
+            if(someConditionIsTrue)
+                resolve('I resolved!')
+            else
+                reject('I rejected!')
+        }
+        const myFirstPromise = new Promise(executorFunction)
+
+        function myExecutor(resolve, reject){
+            return new Promise(myExecutor)
+        }
+
+    The Node setTimeout()
+        setTimeout(functionName, milliseconds)      최소 milliseconds 만큼 대기한 후 함수 실행
+
+    then()
+        let prom = new Promise((resolve, reject) => {   prom이라는 promise.
+            let num = Math.random();                    0 ~ 1 사이의 난수
+            if(num < 0.5){                              0.5보다 작을 때
+                resolve('Yay!')                         resolve : 'Yay!'
+            } else{                                     0.5보다 크거나 작을 때
+                reject('Ohhh noooo!')                   reject : 'Ohhh noooo!'
+            }
+        })
+
+        const handleSuccess = (resolvedValue) => {      resolved 됐을 때
+            console.log(resolvedValue)                  resolve 값 로그
+        }
+
+        const handleFailure = (rejectionReason) => {    rejected 됐을 때
+            console.log(rejectionReason)                reject 값 로그
+        }
+
+        prom.then(handleSuccess, handleFailure)         then(성공시, 실패시)
+                                                        성공시 Yay, 실패시 Ohhh noooo
+
+        prom.then(handleSuccess).catch(handleFailure)   위에것과 동일하지만 catch를 사용함
+
+    Promise.all()
+        promise 배열을 인자로 주고, promise 하나를 리턴한다
+        만약 인자로 줬던 promise배열이 전부 resolve 되면 리턴된 promise가
+        인자로 줬던 배열을 전부 resolve 한다
+        만약 하나라도 reject되면 리턴된 promise는 즉시 reject된다 (reason과 함께)
+
+        let myPromises = Promise.all([returnsPromOne(), returnsPromTwo(), returnsPromThree()])
+
+        myPromises
+        .then((arrayOfValues) => {
+            console.log(arrayOfValues)
+        })
+        .catch((rejectionReason) => {
+            console.log(rejectionReason)
+        })
+
+
+Async Await
+    Async
+        async는 항상 promise를 리턴한다. 즉 promise syntax를 사용할 수 있다 .then(), .catch 등등...
+        async function에서 리턴하는게 아무것도 없다면 undefined로 resolved 된 promise를 리턴한다
+        promise가 아닌 값이 리턴되면 그 값에 의해서 resolved된 promise를 리턴한다
+
+        const fivePromise = async () => {           async function fivePromise(){
+            return 5;                                   return 5;
+        }                                           }
+
+        fivePromise().then(value => {
+            console.log(value)                      // print 5
+        })
+
+        위 예제에서 보면 fivePromise()에서 5를 리턴했는데도 불구하고 promise가 리턴 된 것을 볼 수 있다
+
+    Await
+        only can be used inside an async function. and await is an operator.
+
+        function nativePromiseDinner(){             async function awaitDinner(){
+            brainstormDinner().then(meal => {           let meal = await brainstormDinner()
+                console.log(meal)                       console.log(meal)
+            })                                      }
+        }
+
+    try...catch
+        async function usingTryCatch(){
+            try{
+                let resolveValue = await asyncFuntion('thing that will fail')
+                let secondValue = await secondAsyncFunction(resolveValue)
+            } catch(err){
+                console.log(err)
+            }
+        }
+        usingTryCatch()
+
+        usingTryCatch().catch((err => {             이것도 가능
+            console.log(err);
+        }))

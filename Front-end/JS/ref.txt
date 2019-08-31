@@ -1,0 +1,34 @@
+JavaScript API
+    CMAScript (표준문서)
+        http://www.ecma-international.org/publications/standards/Ecma-262.htm
+
+    자바스크립트 사전 (생활코딩)
+        https://opentutorials.org/course/50
+
+    자바스크립트 레퍼런스 (MDN)
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+
+    jscript 레퍼런스 (MSDN)
+        https://docs.microsoft.com/ko-kr/previous-versions/visualstudio/visual-studio-2010/z688wt03(v=vs.100)
+
+
+Host API
+    웹브라우저 API
+        https://developer.mozilla.org/en-US/docs/Web/API
+
+    Node.js API
+        https://nodejs.org/api/
+
+    Google Apps Script API
+        https://developers.google.com/apps-script/
+
+
+Regular Expression
+    생활코딩 정규표현식 수업
+        https://opentutorials.org/course/909/5142
+
+    정규표현식을 시각화
+        https://regexper.com/
+
+    정규표현식 빌더
+        https://regexr.com/
