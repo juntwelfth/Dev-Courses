@@ -1,0 +1,80 @@
+Window Object
+
+    Document Object Model (DOM)
+        웹페이지의 내용을 제어함. window의 프로퍼티인 document 프로퍼티에 할당된 document 객체가 이러한 작업을 담당함.
+        document객체의 프로퍼티는 문서 내의 주요 엘리먼트에 접근할 수 있는 객체를 제공함
+
+        document
+            getElementsByTagName
+                document.getElementsByTagName('li')         현재 문서의 모든 li를 대상
+                ol.getElementsByTagName('li')               ol 밑에있는 모든 li를 대상
+            
+            getElementsByClassName
+                document.getElementsByClassName('class')    현재 문서의 모든 .class를 대상
+
+            getElementById                                  Element's'가 아닌 Element이다. 가장 성능이 좋다.
+                document.getElementById('id')               현재 문서의 모든 #id를 대상
+
+            querySelector                                   css 선택자의 문법, 하나의 엘리먼트만 선택
+                document.querySelector('li')                제일 처음에 나오는 li를 선택
+                document.querySelector('.class')            제일 처음에 나오는 .class를 대상
+
+            querySelectorAll                                모든 엘리먼트 선택
+                document.querySelectorAll('li')             현재문서의 모든 li 선택
+
+        HTMLElement
+            모든 엘리먼트는 HTMLElement의 자식이다. 따라서 HTMLElement의 프로퍼티를 똑같이 가지고 있다.
+            HTMLElement는 Element의 자식이고, Element는 Node의 자식이다. Node는 Object의 자식이다.
+            이러한 관계를 DOM Tree라고 한다.
+
+        HTMLCollection
+            Element들의 모음집 같은 느낌
+
+
+    Browser Object Model (BOM)
+        웹페이지의 내용을 제외한 브라우저의 각종 요소들을 객체화시킨 것. 전역객체 window의 프로퍼티에 속한 객체들이 이에 속한다.
+        웹브라우저의 창이나 프레임을 추상화해서 프로그래밍적으로 제어할 수 있도록 제공하는 수단
+        BOM은 전역객체인 window의 프로퍼티와 메소드들을 통해 제어할 수 있음
+
+        screen
+        frames
+        history
+        XMLHttpRequest
+        location
+            https://youtube.com:80/module/1?id=1#hash
+
+            https:          location.protocol
+            youtube.com     location.host
+            :80             location.port
+            /module/1       location.pathname
+            ?id=1           location.search
+            #hash           location.hash
+
+            location.href = 'https://youtube.com/'              해당 url로 이동하기
+            location      = 'https://youtube.com/'              동일
+            location.reload()                                   페이지 새로고침
+
+        navigator
+            브라우저의 정보를 제공하는 객체. 주로 호환성 문제등을 위해 사용됨.
+
+            appName         브라우저의 이름
+            appVersion      브라우저의 버전
+            userAgent       서버측으로 전송하는 내용, appVersion과 거의동일
+            platform        운영체제 정보
+
+        alert()                         경고창 발생
+        confirm()                       yes or no 발생
+        prompt()                        사용자 입력 창 발생
+
+        window.open('url')              새로운 탭에서 열기
+        window.open('url', '_self')     현재 페이지에서 열기
+        window.open('url', '_blank')    새 창에서 열기 (계속 새 창을 만든다)
+        window.open('url', 'ot')        창에 이름을 붙이고, 누를때마다 그 창의 문서를 리로드한다
+        window.open('url', '_blank',    새 창의 모양과 관련된 속성 지정
+            'width=200, height=200, resizable=yes')
+
+
+    JavaScript (JSCore)
+        Object
+        Array
+        Function

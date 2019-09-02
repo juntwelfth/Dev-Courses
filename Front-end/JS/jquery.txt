@@ -1,9 +1,54 @@
-Jquery 소스파일
+jQuery 소스파일
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        jQuery(document).ready(function($){
+            // script code
+        })
+    </script>
 
 
 $()
-    $("#list li").text("coding every body")
-    list라는 ID값을 가진 부모를 둔 하위 li 요소들의 text를
-    coding every body로 바꾸기
+    jQuery function
+        ByTagName
+            DOM으로 작성했을 때
+                var lis = document.getElementsByTagName('li')
+                for(var i = 0; i < lis.length; i++){
+                    lis[i].style.color = 'red'
+                }
 
+            jQuery로 작성했을 때
+                $('li').css('color', 'red')
+
+        ByClassName
+            DOM으로 작성했을 때
+                var lis = document.getElementsByClassName('active')
+                for(var i = 0; i < lis.length; i++){
+                    lis[i].style.color = 'red'
+                }
+
+            jQuery로 작성했을 때
+                $('.active').css('color', 'red')
+
+        ById
+            DOM으로 작성했을 때
+                var lis = document.getElementById('active')
+                for(var i = 0; i < lis.length; i++){
+                    lis[i].style.color = 'red'
+                }
+
+            jQuery로 작성했을 때
+                $('$active').css('color', 'red')
+
+        
+        let li = $('li')
+            li.css('text-decoration', 'underline')      첫번째 인자 : 설정 이름, 두번째 인자 : 설정 값
+    
+    
+    CSS Selector
+        $('li')         css 선택자와 동일한 방법으로 jQuery 호출
+
+    map()
+        let li = $('li')
+        li.map((index, elem) => {
+            $(elem).css('color', 'red')
+        })
